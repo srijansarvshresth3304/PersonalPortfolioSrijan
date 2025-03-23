@@ -1,0 +1,246 @@
+:root {
+    --primary-dark: #020024;
+    --primary-purple: #a70acd;
+    --header-bg: #00008b;
+    --text-color: white;
+    --shadow-blue: rgba(10, 130, 234, 0.914);
+    --gradient-start: #ff6b6b;
+    --gradient-end: #4ecdc4;
+    --hover-glow: rgba(212, 244, 4, 0.915);
+}
+
+/* ====== BASE STYLES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(337deg, var(--primary-dark) 0%, var(--primary-purple) 55%);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ====== HEADER & NAVIGATION ====== */
+
+/* ====== ABOUT SECTION ====== */
+.about {
+    background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+    padding: 5rem 2rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    color: white;
+    overflow: hidden;
+}
+
+.about h1 {
+    font-size: 4rem;
+    text-shadow: 0 5px 0 var(--shadow-blue);
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.about p {
+    font-size: 1.8rem;
+    /* text-shadow: 0 5px 5px var(--shadow-blue); */
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.about-text,
+.about-skills,
+.about-goals {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-out 1s;
+    animation-fill-mode: both;
+}
+
+.about-text:hover,
+.about-skills:hover,
+.about-goals:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-skills li {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.3s ease;
+}
+
+.about-skills li:hover {
+    color: var(--hover-glow);
+}
+
+.about-skills i {
+    color: var(--hover-glow);
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.about-skills li:hover i {
+    transform: rotate(360deg);
+}
+
+.about-goals p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    transition: all 0.5s ease;
+}
+
+.about-goals:hover p {
+    color: var(--header-bg);
+    transition: all 0.3s ease;
+    line-height: 2;
+    font-weight: bold;
+    /* letter-spacing: 0.05em; */
+
+
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about h1 {
+        font-size: 3rem;
+    }
+
+    .about p {
+        font-size: 1.6rem;
+    }
+
+    .about-content {
+        padding: 0 1rem;
+    }
+
+    .about-text,
+    .about-skills,
+    .about-goals {
+        padding: 1.5rem;
+    }
+
+    .about-skills li {
+        font-size: 1.4rem;
+    }
+
+    .about-goals p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 525px) {
+    .about h1 {
+        font-size: 2.5rem;
+        /* Smaller heading for very small screens */
+    }
+
+    .about p {
+        font-size: 1.4rem;
+        /* Smaller paragraph text */
+    }
+
+    .about-content {
+        gap: 2rem;
+        /* Reduce gap between sections */
+    }
+
+    .about-text,
+    .about-skills,
+    .about-goals {
+        padding: 1rem;
+        /* Reduce padding for cards */
+    }
+
+    .about-skills li {
+        font-size: 1.2rem;
+        /* Smaller skill items */
+    }
+
+    .about-goals p {
+        font-size: 1.2rem;
+        /* Smaller goals text */
+    }
+
+    /* Adjust navigation for very small screens */
+    nav ul {
+        gap: 2rem;
+        /* Reduce gap between navigation items */
+    }
+
+    nav a {
+        font-size: 1.4rem;
+        /* Smaller navigation text */
+    }
+
+    nav a::before {
+        font-size: 1.6rem;
+        /* Smaller navigation icons */
+    }
+}

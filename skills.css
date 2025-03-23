@@ -1,0 +1,187 @@
+:root {
+    --primary-dark: #020024;
+    --primary-purple: #a70acd;
+    --header-bg: #00008b;
+    --text-color: white;
+    --shadow-blue: rgba(10, 130, 234);
+    --gradient-start: #ff6b6b;
+    --gradient-end: #4ecdc4;
+    --hover-glow: rgba(212, 244, 4);
+}
+
+/* ====== BASE STYLES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(337deg, var(--primary-dark) 0%, var(--primary-purple) 55%);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ====== HEADER & NAVIGATION ====== */
+/* ====== SKILLS SECTION ====== */
+.skills {
+    padding: 5rem 2rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    color: white;
+}
+
+.skills h1 {
+    font-size: 4rem;
+    text-shadow: 0 5px 0 var(--shadow-blue);
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.skills p {
+    font-size: 1.8rem;
+    text-shadow: 0 5px 5px var(--shadow-blue);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-out 1s;
+    animation-fill-mode: both;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 4rem);
+    /* 3 cards per row */
+    max-width: calc(33.333% - 4rem);
+    /* 3 cards per row */
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card i {
+    font-size: 4rem;
+    color: var(--hover-glow);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover i {
+    transform: rotate(360deg);
+}
+
+.skill-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.skill-card p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+/* Center the last card if the total number of cards is odd */
+.skills-container:after {
+    content: "";
+    flex: auto;
+    max-width: calc(33.333% - 4rem);
+    /* Match card width */
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+    .skills h1 {
+        font-size: 3rem;
+    }
+
+    .skills p {
+        font-size: 1.6rem;
+    }
+
+    .skill-card {
+        flex: 1 1 calc(50% - 2rem);
+        /* 2 cards per row on tablets */
+        max-width: calc(50% - 2rem);
+    }
+
+    .skills-container:after {
+        max-width: calc(50% - 2rem);
+        /* Match card width */
+    }
+}
+
+@media (max-width: 525px) {
+    .skills h1 {
+        font-size: 2.5rem;
+    }
+
+    .skills p {
+        font-size: 1.4rem;
+    }
+
+    .skill-card {
+        flex: 1 1 100%;
+        /* 1 card per row on mobile */
+        max-width: 100%;
+    }
+
+    .skills-container:after {
+        max-width: 100%;
+        /* Match card width */
+    }
+}

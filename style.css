@@ -1,0 +1,1103 @@
+/* ====== CSS VARIABLES ====== */
+:root {
+    --primary-dark: #020024;
+    --primary-purple: #a70acd;
+    --header-bg: #00008b;
+    --text-color: white;
+    --shadow-blue: rgba(10, 130, 234);
+    --gradient-start: #ff6b6b;
+    --gradient-end: #4ecdc4;
+    --hover-glow: rgba(212, 244, 4);
+}
+
+/* ====== BASE STYLES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(337deg, var(--primary-dark) 0%, var(--primary-purple) 55%);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    height: auto;
+}
+
+/* ====== HEADER & NAVIGATION ====== */
+header {
+    background-color: var(--header-bg);
+    padding: 1.5rem 0;
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    /* overflow: hidden; */
+    transition: all 0.3s ease;
+}
+
+.nav-text {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: inline-block;
+}
+
+/* Navigation Icons */
+nav a::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Icon Definitions */
+a[href="index.html"]::before {
+    content: "\f015";
+}
+
+a[href="about.html"]::before {
+    content: "\f007";
+}
+
+a[href="skills.html"]::before {
+    content: "\f085";
+}
+
+a[href="#projects"]::before {
+    content: "\f0c0";
+}
+
+a[href="#contact"]::before {
+    content: "\f2a0";
+}
+
+/* Hover Effects */
+nav a:hover .nav-text {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+nav a:hover::before {
+    opacity: 1;
+}
+
+/* ====== HERO SECTION ====== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+#hero-part img {
+    width: 30rem;
+    height: 60rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px var(--shadow-blue);
+    position: relative;
+    top: -5%;
+    right: -20%;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+    animation: fadeInUp .1s ease-out 0.5s;
+    animation-fill-mode: both;
+    /* aspect-ratio: 1 / 1; */
+    width: 60%;
+    /* ya jo width chahiye, us hisaab se */
+    object-fit: cover top;
+    overflow: hidden;
+
+    /* z-index: 1; */
+    /* position: relative; */
+    /* animation: pulse 2s infinite;
+    animation-timing-function: ease-in-out; */
+    /* animation: shake 2s infinite; */
+    /* animation-timing-function: ease-in-out; */
+    /* animation: swirl 2s infinite; */
+    /* animation-timing-function: ease-in-out; */
+    /* animation: spin 2s infinite; */
+    /* animation-timing-function: ease-in-out; */
+}
+
+/* Hero Animation */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* ====== CONTACT BUTTON ====== */
+#contact-btn {
+    padding: 1.5rem 3rem;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    border: none;
+    border-radius: 3rem;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#contact-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 2px var(--hover-glow);
+}
+
+#contact-btn i {
+    font-size: 2rem;
+}
+
+#contact-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#contact-part span {
+    font-size: 2rem;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--text-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 0.5rem;
+}
+
+footer .social-media a .fa-github {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+footer .social-media a .fa-linkedin {
+    font-size: 2rem;
+    background-color: var(--text-color);
+}
+
+footer .social-media a .fa-twitter {
+    color: #189adf;
+    font-size: 2rem;
+}
+
+footer {
+    position: relative;
+    background: linear-gradient(45deg, var(--primary-purple), var(--header-bg));
+    padding: 3rem 0;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 4px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--hover-glow),
+            var(--gradient-start),
+            transparent);
+    animation: borderFlow 4s linear infinite;
+}
+
+@keyframes borderFlow {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+.social-media a {
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 1rem;
+}
+
+.social-media a:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 10px var(--hover-glow));
+}
+
+.social-media a::after {
+    content: attr(data-platform);
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0 1rem;
+    border-radius: 5px;
+}
+
+.social-media a:hover::after {
+    opacity: 1;
+}
+
+/* ====== PARTICLE EFFECTS ====== */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, var(--hover-glow) 0%, transparent 70%);
+    width: 4px;
+    height: 4px;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100%) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+.social-media:hover~.mouse-trail {
+    opacity: 1;
+}
+
+.mouse-trail {
+    position: absolute;
+    pointer-events: none;
+    width: 10px;
+    height: 10px;
+    background: var(--hover-glow);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.footer-signature {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.magic-text {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+.crafted-with {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 1.8rem;
+}
+
+.crafted-with:hover~.sparkles {
+    opacity: 1;
+}
+
+.sparkles {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.code-creativity {
+    background: linear-gradient(45deg,
+            #ff6b6b 20%,
+            #4ecdc4 50%,
+            #a70acd 80%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientFlow 4s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.code-creativity::before {
+    content: ">> ";
+    color: var(--hover-glow);
+    animation: terminalBlink 1s infinite;
+}
+
+@keyframes terminalBlink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.code-creativity {
+    text-shadow:
+        2px 2px 0 var(--gradient-start),
+        -2px -2px 0 var(--gradient-end);
+    transition: 0.3s;
+}
+
+.code-creativity:hover {
+    text-shadow:
+        4px 4px 10px var(--gradient-start),
+        -4px -4px 10px var(--gradient-end);
+}
+
+.ascii-art pre {
+    color: var(--gradient-end);
+    font-family: monospace;
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1rem 0;
+    animation: asciiGlow 2s infinite alternate;
+}
+
+@keyframes asciiGlow {
+    from {
+        text-shadow: 0 0 5px var(--primary-purple);
+    }
+
+    to {
+        text-shadow: 0 0 15px var(--hover-glow);
+    }
+}
+
+.crafted-with {
+    position: relative;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+}
+
+.sparkles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* style.css में निम्नलिखित CSS अपडेट करें */
+/* Sparkle Effect */
+.sparkles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--hover-glow);
+    border-radius: 50%;
+    animation: sparkle 1.5s infinite;
+    filter: drop-shadow(0 0 5px var(--hover-glow));
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translateY(0) scale(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-200px) scale(0);
+        opacity: 0;
+    }
+}
+
+.crafted-with:hover~.sparkles {
+    opacity: 1;
+}
+
+.circle {
+    display: none;
+}
+
+/* ====== CONTACT FORM SECTION ====== */
+#contact {
+    padding: 5rem 2rem;
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary-purple));
+    color: var(--text-color);
+    text-align: center;
+    height: 100vh;
+}
+
+.contact-container {
+    /* max-width: 800px; */
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.contact-container .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+    font-size: 2rem;
+    /* Change this value to adjust the overall font size */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: inherit;
+    /* Inherit font size from .form-group */
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    /* Label ka font size */
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 2rem;
+}
+
+.form-group input:focus~label,
+.form-group textarea:focus~label,
+.form-group input:not(:placeholder-shown)~label,
+.form-group textarea:not(:placeholder-shown)~label {
+    top: -0.8rem;
+    left: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--hover-glow);
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ascii-art {
+    font-family: "Courier New", monospace;
+    /* Fixed-width font for alignment */
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--gradient-end);
+    animation: asciiGlow 2s infinite alternate;
+    white-space: pre;
+    /* Preserve whitespace and line breaks */
+    overflow: hidden;
+    /* Prevent overflow */
+}
+
+@keyframes asciiGlow {
+    from {
+        text-shadow: 0 0 5px var(--primary-purple);
+    }
+
+    to {
+        text-shadow: 0 0 15px var(--hover-glow);
+    }
+}
+
+.ascii-art {
+    font-family: "Courier New", monospace;
+    /* Fixed-width font for alignment */
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--gradient-end);
+    animation: asciiGlow 2s infinite alternate;
+    white-space: pre;
+    /* Preserve whitespace and line breaks */
+    overflow: hidden;
+    /* Prevent overflow */
+}
+
+@keyframes asciiGlow {
+    from {
+        text-shadow: 0 0 5px var(--primary-purple);
+    }
+
+    to {
+        text-shadow: 0 0 15px var(--hover-glow);
+    }
+}
+
+/* ====== PROJECTS SECTION ====== */
+#projects {
+    padding: 5rem 2rem;
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary-purple));
+    color: var(--text-color);
+    text-align: center;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.projects-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.projects-container .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+    .click-effect .c3 {
+        top: 40%;
+        right: 0%;
+        transform: translateY(-50%);
+    }
+
+    header {
+        display: none;
+    }
+
+    .hero {
+        padding: 1rem;
+        height: 93vh;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.6rem;
+    }
+
+    #contact {
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+    }
+
+    #contact-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #contact-part span {
+        font-size: 2rem;
+    }
+
+    #hero-part img {
+        position: relative;
+        top: 40%;
+        right: 0;
+        width: 20rem;
+        height: auto;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 0 20px 10px var(--gradient-start);
+        margin-bottom: 8rem;
+        /* z-index: -1; */
+    }
+
+    /* New Code: Blast aur Circles Effect */
+    /* Click Effect */
+    .click-effect {
+        position: relative;
+        margin: 2rem 0;
+    }
+
+    /* Flower Animation */
+    /* Explode Animation (Center se bahar) */
+    /* Explode Animation */
+    @keyframes explodeOpen {
+        0% {
+            transform: scale(0) translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1) translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+
+    /* Implode Animation (Bahar se center) */
+    /* Implode Animation */
+    @keyframes explodeClose {
+        0% {
+            transform: scale(1) translate(-50%, -50%);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(0) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+
+    .circle {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: var(--gradient-start);
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* animation: explodeOpen 0.5s ease forwards; */
+    }
+
+    .circle.open {
+        animation: explodeOpen 0.5s ease forwards;
+    }
+
+    .circle a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    /* Circles ki positions */
+    /* Circle Positions */
+    .c1 {
+        position: absolute;
+        top: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center horizontally */
+    }
+
+    .c2 {
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        /* Left edge pe */
+        transform: translateY(-50%);
+        /* Center vertically */
+    }
+
+    .c3 {
+        position: absolute;
+        top: 40%;
+        /* right: -10%; */
+        /* Right edge pe */
+        transform: translateY(-50%);
+        /* Center vertically */
+        /* z-index: 9999; */
+        /* position: absolute; */
+        left: 90%;
+        /* right: 0; */
+    }
+
+    .c4 {
+        position: absolute;
+        top: 100%;
+        /* Bottom se 10% upar */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center horizontally */
+    }
+
+    .c5 {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Perfect center */
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 2rem;
+        margin-bottom: 4rem;
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 550px) {
+    .click-effect .c3 {
+        top: 35%;
+        right: 0%;
+        transform: translateY(-50%);
+    }
+
+    header {
+        display: none;
+    }
+
+    .hero {
+        padding: 1rem;
+        height: 93vh;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.6rem;
+    }
+
+    #contact {
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+    }
+
+    #contact-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #contact-part span {
+        font-size: 2rem;
+    }
+
+    #hero-part img {
+        position: relative;
+        top: -20%;
+        right: 0;
+        width: 20rem;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 0 20px 10px var(--gradient-start);
+        margin-bottom: 8rem;
+    }
+
+    /* New Code: Blast aur Circles Effect */
+    /* Click Effect */
+    .click-effect {
+        position: relative;
+        margin: 2rem 0;
+    }
+
+    .circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        width: 60px;
+        height: 60px;
+        background: var(--gradient-start);
+        border-radius: 50%;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+    }
+
+    .circle:active {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    .circle a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 900;
+    }
+
+    /* Circles ki positions */
+    /* Circle Positions */
+    .c1 {
+        position: absolute;
+        top: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center horizontally */
+    }
+
+    .c2 {
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        /* Left edge pe */
+        transform: translateY(-50%);
+        /* Center vertically */
+    }
+
+    .c3 {
+        position: absolute;
+        bottom: 60%;
+        /* right: -10%; */
+        /* Right edge pe */
+        transform: translateY(-50%);
+        /* Center vertically */
+        /* z-index: 9999; */
+        /* position: absolute; */
+        left: 90%;
+        /* right: 0; */
+    }
+
+    .c4 {
+        position: absolute;
+        top: 90%;
+        /* Bottom se 10% upar */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center horizontally */
+    }
+
+    .c5 {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Perfect center */
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 2rem;
+        margin-bottom: 4rem;
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .click-effect .circle a {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+}

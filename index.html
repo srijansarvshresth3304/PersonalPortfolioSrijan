@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" target="_blank"><span class="nav-text">Home</span></a></li>
+                <li><a href="about.html" target="_blank"><span class="nav-text">About</span></a></li>
+                <li><a href="skills.html" target="_blank"><span class="nav-text">Skills</span></a></li>
+                <li><a href="#projects"><span class="nav-text">Projects</span></a></li>
+                <li><a href="#contact"><span class="nav-text">Contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div id="hero-part">
+            <!-- Image ke around ye code daalo -->
+            <div class="click-effect">
+                <img src="srijan.jpg" alt="Srijan" id="profile-image" loading="lazy">
+                <div class="circle c1">
+                    <a href="index.html" target="_blank">Home</a>
+                </div>
+                <div class="circle c2">
+                    <a href="about.html" target="_blank">About</a>
+                </div>
+                <div class="circle c3">
+                    <a href="skills.html" target="_blank">Skills</a>
+                </div>
+                <div class="circle c4">
+                    <a href="#projects" target="_blank">Projects</a>
+                </div>
+                <div class="circle c5">
+                    <a href="#contact" target="_blank">Contact</a>
+                </div>
+            </div>
+            <h1>Srijan - Frontend Web Developer</h1>
+            <p>Design isn’t just what we see—it’s also what we make others see.</p>
+        </div>
+        <div id="contact-part">
+            <button id="contact-btn">Contact Me</button><span>for 👁️ catching websites</span>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="projects-container">
+            <h2 class="gradient-text">My Projects</h2>
+            <p class="tagline">Check out some of my awesome work! 🚀</p>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="project1.webp" alt="Project 1">
+                    <div class="project-info">
+                        <h3>E-Commerce Website</h3>
+                        <p>A fully functional e-commerce website built with React.js and Node.js.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="project2.webp" alt="Project 2">
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>A personal portfolio website showcasing my skills and projects.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="project3.webp" alt="Project 3">
+                    <div class="project-info">
+                        <h3>Blog Platform</h3>
+                        <p>A blogging platform built with Django and Bootstrap.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <img src="project4.webp" alt="Project 4">
+                    <div class="project-info">
+                        <h3>Task Manager</h3>
+                        <p>A task management app built with Vue.js and Firebase.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <img src="project5.webp" alt="Project 5">
+                    <div class="project-info">
+                        <h3>Weather App</h3>
+                        <p>A real-time weather application using OpenWeather API.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <img src="project6.webp" alt="Project 6">
+                    <div class="project-info">
+                        <h3>Chat Application</h3>
+                        <p>A real-time chat app built with Socket.io and Express.js.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2 class="gradient-text">Get in Touch</h2>
+            <p class="tagline">Let's create something amazing together! 🚀</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <!-- Add 10-15 particles -->
+        </div>
+        <div class="crafted-with">
+            <div class="ascii-art">
+                <pre>
+                    _____ __ __
+                    / ____| /\ | \/ |
+                    | | / \ | \ / |
+                    | | / /\ \ | |\/| |
+                    | |____ / ____ \| | | |
+                    \_____/_/ \_\_| |_|
+                </pre>
+            </div>
+            <span>Crafted with </span>
+            <div class="code-creativity">
+                { code && creativity }
+            </div>
+        </div>
+        <div class="sparkles"></div>
+        <div class="social-media">
+            <a href="#" data-platform="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" data-platform="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" data-platform="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
