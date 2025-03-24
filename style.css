@@ -31,6 +31,13 @@ body {
     height: auto;
 }
 
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+
+}
+
 /* ====== HEADER & NAVIGATION ====== */
 header {
     background-color: var(--header-bg);
@@ -75,23 +82,23 @@ nav a::before {
 }
 
 /* Icon Definitions */
-a[href="index.html"]::before {
+nav a[href="index.html"]::before {
     content: "\f015";
 }
 
-a[href="about.html"]::before {
+nav a[href="about.html"]::before {
     content: "\f007";
 }
 
-a[href="skills.html"]::before {
+nav a[href="skills.html"]::before {
     content: "\f085";
 }
 
-a[href="#projects"]::before {
+nav a[href="#projects"]::before {
     content: "\f0c0";
 }
 
-a[href="#contact"]::before {
+nav a[href="#contact"]::before {
     content: "\f2a0";
 }
 
@@ -173,7 +180,8 @@ h1 {
 }
 
 /* ====== CONTACT BUTTON ====== */
-#contact-btn {
+
+#contact-part a {
     padding: 1.5rem 3rem;
     background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
     border: none;
@@ -187,20 +195,26 @@ h1 {
     gap: 1rem;
 }
 
-#contact-btn:hover {
-    transform: scale(1.1);
+#contact-part a:hover {
+    background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start));
     box-shadow: 0 0 10px 2px var(--hover-glow);
+    transform: scale(1.05);
 }
 
-#contact-btn i {
-    font-size: 2rem;
-}
+/* #contact-btn i {
+    /* font-size: 2rem;
+} */
 
 #contact-part {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    /* margin-top: 10rem; */
+    position: relative;
+    animation: fadeInUp .1s ease-out 0.5s;
+    animation-fill-mode: both;
+    top: 5%;
 }
 
 #contact-part span {
@@ -946,6 +960,11 @@ footer::before {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+
+    #contact-part {
+        position: relative;
+        top: 11%;
     }
 }
 
