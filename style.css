@@ -244,6 +244,7 @@ footer .social-media a .fa-github {
 
 footer .social-media a .fa-linkedin {
     font-size: 2rem;
+    color: #00008b;
     background-color: var(--text-color);
 }
 
